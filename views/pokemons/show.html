@@ -6,6 +6,9 @@
 
     </div>
     <div class="col-sm-9">
+        {% if pokemon.picture %}
+        <img src="/uploads/{{pokemon.picture}}" alt="{{pokemon.name}}" style="width: 100%">
+        {% endif %}
         <h2>{{pokemon.name}} <small style="color:gray">Pokémon n°{{pokemon.number }}</small></h2>
         <p class="lead">
             {{pokemon.description}}
