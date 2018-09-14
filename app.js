@@ -13,6 +13,7 @@ require("./models/Type");
 var app = express();
 
 app.use("/css", express.static(__dirname + "/node_modules/bootstrap/dist/css"));
+app.use("/images", express.static(__dirname + "/images"));
 
 app.use("/", require("./routes/pokemons"));
 app.use("/types", require("./routes/types"));

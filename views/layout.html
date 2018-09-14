@@ -6,16 +6,19 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="/css/bootstrap.min.css" rel="stylesheet">
 </head>
 
 <body>
-    <h1>Pokédex</h1>
-    {% block content %} {% endblock %}
-    <hr>
-    <div class="text-center">
-        Copyright Chris Chevalier 2018
+    <div class="container">
+        <a href="/"><img src="/images/logo.png" alt="Logo Pokédex" width="25%"></a>
+        {% block content %} {% endblock %}
+        <hr>
+        <div class="text-center">
+            Copyright Chris Chevalier 2018
+        </div>
     </div>
+
 </body>
 
 </html>

@@ -3,11 +3,11 @@
 {% block content %}
 <h2>Pokémons</h2>
 {% for p in pokemons %}
-<div class="panel panel-default">
-    <div class="panel-heading">
-        {{p.name}}
+<div class="card">
+    <div class="card-header">
+        <a href="/{{p._id}}">{{p.name}}</a>
     </div>
-    <div class="panel-content">
+    <div class="card-body">
         {{p.description}}
     </div>
 </div>
