@@ -24,13 +24,21 @@ router.get("/new", (req, res) => {
 
 router.get("/edit/:id", (req, res) => {
     Type.find({}).then(types => {
-        Pokemon.findById(req.params.id).then(pokemon => {
-            res.render("pokemons/edit.html", {
-                pokemon: pokemon,
-                types: types,
-                endpoint: "/" + pokemon._id.toString()
+        if (req.params.id.match(/^[0-9a-fA-F]{24}$/)) {
+            Pokemon.findById(req.params.id).then(pokemon => {
+                res.render("pokemons/edit.html", {
+                    pokemon: pokemon,
+                    types: types,
+                    endpoint: "/" + pokemon._id.toString()
+                });
             });
-        });
+        }
+    });
+});
+
+router.get("/delete/:id", (req, res) => {
+    Pokemon.findOneAndRemove({ _id: req.params.id }).then(() => {
+        res.redirect("/");
     });
 });
 

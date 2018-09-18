@@ -1,8 +1,7 @@
 {% extends "layout.html" %}
 
 {% block content %}
-<h2>Pokémons</h2>
-<a href="/new" class="btn btn-primary">Ajouter un Pokémon</a>
+<h2>Pokémons de type <span style="background-color: {{type.color}}" class="badge badge-secondary">{{type.name}}</span></h2>
 <hr>
 {% for p in pokemons %}
 <div class="card">
