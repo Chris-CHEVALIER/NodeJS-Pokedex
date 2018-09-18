@@ -2,6 +2,8 @@
 
 {% block content %}
 <h2>Pokémons de type <span style="background-color: {{type.color}}" class="badge badge-secondary">{{type.name}}</span></h2>
+<a href="/types/edit/{{type.name}}" class="btn btn-outline-secondary">Éditer</a>
+<a href="/types/delete/{{type.name}}" class="btn btn-outline-danger">Supprimer</a>
 <hr>
 {% for p in pokemons %}
 <div class="card">

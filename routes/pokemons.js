@@ -24,15 +24,13 @@ router.get("/new", (req, res) => {
 
 router.get("/edit/:id", (req, res) => {
     Type.find({}).then(types => {
-        if (req.params.id.match(/^[0-9a-fA-F]{24}$/)) {
-            Pokemon.findById(req.params.id).then(pokemon => {
-                res.render("pokemons/edit.html", {
-                    pokemon: pokemon,
-                    types: types,
-                    endpoint: "/" + pokemon._id.toString()
-                });
+        Pokemon.findById(req.params.id).then(pokemon => {
+            res.render("pokemons/edit.html", {
+                pokemon: pokemon,
+                types: types,
+                endpoint: "/" + pokemon._id.toString()
             });
-        }
+        });
     });
 });
 
